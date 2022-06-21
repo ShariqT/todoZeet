@@ -4,17 +4,16 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 
-	"gopkg.in/mgo.v2"
 	"github.com/siredwin/pongorenderer/renderer"
-	// "github.com/flosch/pongo2"
+	"gopkg.in/mgo.v2"
+	"os"
 )
-
 
 func main() {
 
-	MainRenderer := renderer.Renderer{Debug:true}
+	MainRenderer := renderer.Renderer{Debug: true}
 
-	db, err := mgo.Dial("localhost")
+	db, err := mgo.Dial(os.Getenv("DATABASE"))
 	if err != nil {
 		panic("Could not establish connection the database")
 	}
