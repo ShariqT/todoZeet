@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/labstack/echo"
-	"github.com/flosch/pongo2"
+	// "github.com/flosch/pongo2"
 )
 
 type Handler struct {
@@ -10,9 +10,10 @@ type Handler struct {
 }
 
 func (h *Handler) listTodos (c echo.Context) error {
-	data := pongo2.Context{}
-	data["todos"] = h.DB
-	return c.Render(200, "templates/index.html", data)
+	// data := pongo2.Context{}
+	// data["todos"] = h.DB
+	// return c.Render(200, "templates/index.html", data)
+	return c.JSON(200, h.DB)
 }
 
 // func (h *Handler) updateTodo (c echo.Context) error {
