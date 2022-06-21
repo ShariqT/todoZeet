@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	// "github.com/labstack/echo/middleware"
 	// "github.com/siredwin/pongorenderer/renderer"
 )
 
