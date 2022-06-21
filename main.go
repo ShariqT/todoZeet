@@ -13,8 +13,8 @@ func main() {
 
 	routeHandlers := &Handler{DB: db}
 	e := echo.New()
-	e.Use(middleware.Logger())
+	// e.Use(middleware.Logger())
 	e.GET("/", routeHandlers.listTodos)
 	// e.POST("/update", routeHandlers.updateTodo)
-	e.Logger.Info(e.Start(":3000"))
+	e.Start(":3000")
 }
