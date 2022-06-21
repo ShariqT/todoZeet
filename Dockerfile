@@ -12,4 +12,4 @@ EXPOSE 3000
 
 ENV DATABASE=localhost
 
-CMD ./main
+CMD ./todoZeet
