@@ -3,21 +3,16 @@ package main
 import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-
 	"github.com/siredwin/pongorenderer/renderer"
-	"gopkg.in/mgo.v2"
-	"os"
 )
 
 func main() {
 
 	MainRenderer := renderer.Renderer{Debug: true}
 
-	db, err := mgo.Dial(os.Getenv("DATABASE"))
-	if err != nil {
-		panic("Could not establish connection the database")
-	}
-	defer db.Close()
+	var db []*Todo
+	db = append(db, NewTodo("dfsdf", false))
+	db = append(db, NewTodo("dsdfssdfsdfs", false))
 
 	routeHandlers := &Handler{DB: db}
 	// routeHandlers := &Handler{}
@@ -26,6 +21,6 @@ func main() {
 	e.Renderer = MainRenderer
 	e.Static("/static", "assets")
 	e.GET("/", routeHandlers.listTodos)
-	e.POST("/update", routeHandlers.updateTodo)
+	// e.POST("/update", routeHandlers.updateTodo)
 	e.Logger.Info(e.Start(":3000"))
 }

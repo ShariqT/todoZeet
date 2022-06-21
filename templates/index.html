@@ -14,7 +14,7 @@
         <div class="card-footer-item">
             <form action="/update" method="POST">
                 <input type="hidden" name="Finished" value="false" />
-                <input type="hidden" name="ID" value="{{todo.ID.Hex()}}" />
+                <!-- <input type="hidden" name="ID" value="{{todo.ID.Hex()}}" /> -->
                 <button type="submit" class="button is-warning">Revert</button>
             </form>
         </div>
@@ -23,14 +23,14 @@
         <div class="card-footer-item">
             <form action="/update" method="POST">
                 <input type="hidden" name="Finished" value="true" />
-                <input type="hidden" name="ID" value="{{todo.ID.Hex()}}" />
+                <input type="hidden" name="ID" value="{{todo.ID.String()}}" />
                 <button type="submit" class="button is-success">Mark Done</button>
             </form>
         </div>
         {% endif %}
         <div class="card-footer-item">
             <form action="/delete" method="POST">
-                <input type="hidden" name="ID" value="{{todo.ID.Hex()}}" />
+                <input type="hidden" name="ID" value="{{todo.ID.String()}}" />
                 <button type="submit" class="button is-danger">Delete</button>
             </form>
         </div>
