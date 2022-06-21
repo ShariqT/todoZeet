@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/labstack/echo"
+	"github.com/aws/aws-lambda-go/lambda"
 	// "github.com/labstack/echo/middleware"
 	// "github.com/siredwin/pongorenderer/renderer"
 )
@@ -16,5 +17,7 @@ func main() {
 	// e.Use(middleware.Logger())
 	e.GET("/", routeHandlers.listTodos)
 	// e.POST("/update", routeHandlers.updateTodo)
-	e.Start(":3000")
+	lambdaAdapter := &LambdaAdapter{Echo: e}
+	lambda.Start(lambdaAdapter.Handler)
+	// e.Start(":3000")
 }

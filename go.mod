@@ -3,14 +3,12 @@ module todoZeet
 go 1.18
 
 require (
-	github.com/flosch/pongo2 v0.0.0-20200913210552-0d938eb266f3
+	github.com/aws/aws-lambda-go v1.32.0
 	github.com/google/uuid v1.3.0
 	github.com/labstack/echo v3.3.10+incompatible
-	github.com/siredwin/pongorenderer v0.0.0-20180101092958-650887b66983
 )
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/labstack/gommon v0.3.1 // indirect
 	github.com/mattn/go-colorable v0.1.11 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
