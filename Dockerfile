@@ -1,4 +1,4 @@
-FROM golang:1.15
+FROM public.ecr.aws/zeet/lambdahandler
 
 WORKDIR /app
 
