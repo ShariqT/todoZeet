@@ -10,6 +10,4 @@ RUN go build
 
 EXPOSE 3000
 
-ENV DATABASE=localhost
-
 CMD ./todoZeet
